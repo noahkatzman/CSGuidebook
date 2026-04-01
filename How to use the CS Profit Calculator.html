@@ -1,0 +1,151 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem; font-family: var(--font-sans); }
+  .header { background: #3d5a2a; color: #fff; padding: 2rem 1.5rem 1.5rem; border-radius: var(--border-radius-lg); margin-bottom: 2rem; }
+  .header h1 { color: #d4a843; font-size: 22px; font-weight: 500; text-align: center; margin-bottom: 4px; }
+  .header p { color: #ccc; text-align: center; font-size: 14px; margin-bottom: 1rem; }
+  .btn { display: inline-block; background: #2e7ab6; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; cursor: pointer; text-decoration: none; }
+  .btn:hover { background: #255f8e; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  .section-box { border: 1.5px solid #c8b87a; border-radius: var(--border-radius-lg); padding: 1.25rem; }
+  .section-title { color: #d4a843; font-size: 15px; font-weight: 500; border-bottom: 1.5px solid #d4a843; padding-bottom: 6px; margin-bottom: 1rem; }
+  .step-row { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+  .badge { background: #c0622a; color: #fff; border-radius: 50%; width: 24px; height: 24px; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .step-text { font-size: 14px; color: var(--color-text-primary); }
+  .step-text strong { font-weight: 500; display: block; }
+  .step-text small { color: var(--color-text-secondary); }
+  .bullet-list { margin: 8px 0 0 34px; list-style: none; }
+  .bullet-list li { font-size: 14px; color: var(--color-text-primary); margin-bottom: 4px; padding-left: 12px; position: relative; }
+  .bullet-list li::before { content: "•"; color: #c0622a; position: absolute; left: 0; }
+  .results-section { margin-bottom: 2rem; }
+  .results-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+  .result-item { border: 1.5px solid #c8b87a; border-radius: var(--border-radius-md); padding: 1rem; }
+  .result-item .label { color: #d4a843; font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .result-item .desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+  .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+  .scenario-card { border: 1.5px solid #c8b87a; border-radius: var(--border-radius-md); padding: 1rem; }
+  .scenario-card .slabel { color: #3d5a2a; font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+  .scenario-card .sdesc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+  .good-to-know { border: 1.5px solid #c8b87a; border-radius: var(--border-radius-lg); padding: 1.25rem; }
+  .good-to-know p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 10px; padding-left: 1rem; border-left: 3px solid #d4a843; }
+  .good-to-know p:last-child { margin-bottom: 0; }
+  @media (max-width: 600px) {
+    .two-col, .results-grid, .scenario-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="page">
+  <div class="header">
+    <h1>How to Use the CS Bazaar Profit Calculator</h1>
+    <p>Cultural Survival Profit Team</p>
+    <a class="btn" href="https://noahkatzman.shinyapps.io/Cultural_Survival_Bazaar_Accounting_Tool/" target="_blank">Open the Calculator →</a>
+  </div>
+
+  <div class="two-col">
+    <div class="section-box">
+      <div class="section-title">Step 1 (Enter your products)</div>
+      <div class="step-row">
+        <div class="badge">1</div>
+        <div class="step-text">
+          <strong>Choose how many products</strong>
+          <small>Use the dropdown at the top left. Pick 1 to 10.</small>
+        </div>
+      </div>
+      <div class="step-row">
+        <div class="badge">2</div>
+        <div class="step-text">
+          <strong>Fill in each product block</strong>
+          <small>Each product has 4 fields:</small>
+        </div>
+      </div>
+      <ul class="bullet-list">
+        <li>Name — what you are selling</li>
+        <li>Cost to Make ($) — what one unit costs to produce</li>
+        <li>Sell Price ($) — what you charge customers</li>
+        <li>Qty to Sell — how many units you plan to sell</li>
+      </ul>
+    </div>
+
+    <div class="section-box">
+      <div class="section-title">Step 2 (Enter your costs)</div>
+      <div class="step-row">
+        <div class="badge">3</div>
+        <div class="step-text">
+          <strong>Other costs (left card, below products)</strong>
+        </div>
+      </div>
+      <ul class="bullet-list" style="margin-bottom: 12px;">
+        <li>Travel Cost ($) — gas, flights, hotel to reach the event</li>
+        <li>Labor Cost ($) — total wages for booth staff</li>
+      </ul>
+      <div class="step-row">
+        <div class="badge">4</div>
+        <div class="step-text">
+          <strong>Additional expenses (right card, optional)</strong>
+          <small>Click "+ Add Expense" for packaging, permits, supplies, etc.</small>
+        </div>
+      </div>
+      <div class="step-row" style="margin-top: 10px;">
+        <div class="badge">5</div>
+        <div class="step-text">
+          <strong>Click "Calculate"</strong>
+          <small>The results panel appears below automatically.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-section">
+    <div class="section-title">Results Summary (What each number means)</div>
+    <div class="results-grid">
+      <div class="result-item">
+        <div class="label">Total Revenue</div>
+        <div class="desc">Money earned if all products sell at your listed prices</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Total Costs</div>
+        <div class="desc">All product costs plus travel, labor, and extra expenses</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Net Profit / Loss</div>
+        <div class="desc">Revenue minus costs. Green means profit. Red means loss.</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Break Even Revenue</div>
+        <div class="desc">Minimum sales needed to cover all your costs</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Fixed Overhead</div>
+        <div class="desc">Costs that stay the same no matter how much you sell</div>
+      </div>
+      <div class="result-item">
+        <div class="label">Blended Margin %</div>
+        <div class="desc">Average profit margin across all products. 30% or above is a good sign.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-section">
+    <div class="section-title">Scenario Planner (Bottom of the page)</div>
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="slabel">Set a profit goal</div>
+        <div class="sdesc">Enter how much profit you want to make, then click "Show Target". The app tells you exactly how much revenue you need and whether your current products can get you there.</div>
+      </div>
+      <div class="scenario-card">
+        <div class="slabel">Check actual results</div>
+        <div class="sdesc">Enter your actual total revenue earned, then click "Show P&L". The app shows your estimated costs and whether you are up or down money for the event.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="results-section">
+    <div class="section-title">Good to know</div>
+    <div class="good-to-know">
+      <p>Margin % shows your pricing cushion. If it reads low, it may be worth reviewing your prices or material costs to give yourself more room.</p>
+      <p>Break even is your safety number. Knowing it before the event helps you plan how much you need to sell to at least cover your costs.</p>
+      <p>More detail gives better results. Including smaller costs like bags, tags, or processing fees makes the numbers more accurate and useful.</p>
+    </div>
+  </div>
+</div>
